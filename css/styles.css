@@ -1,0 +1,75 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+img{
+    max-width: 100%;
+}
+
+.contenedor-media{
+    margin: 0 auto;
+    max-width: 700px;
+    display: grid;
+    grid-template-areas: 
+    "titulo"
+    "slogan"
+    "info"
+    "imagen"
+    "entrada"
+    ;
+}
+
+@media(min-width:768px){
+    .contenedor-media{
+        grid-template-areas: 
+        "titulo titulo"
+        "imagen slogan"
+        "imagen info"
+        "entrada entrada"    
+        ;
+        grid-template-columns: 50% 50%;
+    }
+
+}
+
+
+
+.titulo{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    grid-area: titulo;
+}
+.imagen{
+    grid-area: imagen;
+}
+.info{
+    padding: 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    grid-area: info;
+}
+.slogan{
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: aliceblue;
+    background-color: black;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    grid-area: slogan;
+}
+.entrada{
+    text-align: justify;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    grid-area: entrada;
+}
